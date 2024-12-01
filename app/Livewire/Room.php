@@ -4,7 +4,7 @@ namespace App\Livewire;
 
 use Livewire\Component;
 use App\Models\RoomModel;
-use Illuminate\Support\Facades\validate;
+// use Illuminate\Support\Facades\validate;
 
 class Room extends Component
 {
@@ -109,16 +109,11 @@ class Room extends Component
             $room->price_per_month = $this->price_per_month;
             $room->status = 'use';
             $room->save();
+            
         }
         $this->showModal = false;
         $this->fetchData();
     }
-
-           
-        
-
-
-
 
     public function render()
     {

@@ -60,6 +60,53 @@
                 <label>ถึงหมายเลข</label>
                 <input type="text" class="form-control" wire:model="to_number">
             </div>
+            <div class="w-1/2">
+                <label">ค่าเช่าต่อวัน</label>
+                    <input type="text" class="form-control" wire:model="price_per_day">
+            </div>
+            <div class="w-1/2">
+                <label">ค่าเช่าต่อเดือน</label>
+                    <input type="text" class="form-control" wire:model="price_per_month">
+            </div>
+        </div>
+
+        <div class="mt-5 text-center pb-5">
+            <button class="btn-success mr-2" wire:click = "createRoom">
+                <i class="fa-solid fa-check mr-2"></i>
+                สร้างห้องพัก
+            </button>
+            <button class="btn-danger" wire:click="showModal = false">
+                <i class="fa-solid fa-times mr-2"></i>
+                ยกเลิก
+            </button>
         </div>
     </x-modal>
+    <!-- แก้ไขห้องพัก-->
+    <x-modal wire:model="showModalEdit" title="แก้ไขห้องพัก" maxWidth="xl">
+        <div>ห้องพัก</div>
+        <input type="text" class="form-control" wire:model="name">
+
+        <div class="mt-3">ราคาต่อวัน</div>
+        <input type="text" class="form-control" type="number" wire:model="price_day">
+
+        <div class="mt-3">ราคาต่อเดือน</div>
+        <input type="text" class="form-control" type="number" wire:model="price_month">
+
+        <div class="mt-5 text-center pb-5">
+            <button class="btn-success mr-2" wire:click="updateRoom">
+                <i class="fa-solid fa-check mr-2"></i>
+                บันทึก
+            </button>
+            <button class="btn-danger" wire:click="showModalEdit = false">
+                <i class="fa-solid fa-times mr-2"></i>
+                ยกเลิก
+            </button>
+        </div>
+    </x-modal>
+
+    <!-- ลบห้องพัก-->
+    <x-modal-confirm wire:model="showModalDelete" title="ลบห้องพัก"
+        text="คุณต้องการลบห้องพัก {{ $name }} ใช่หรือไม่" clickConfirm="deleteRoom"
+        clickCancel="showModalDelete = false" />
+
 </div>
