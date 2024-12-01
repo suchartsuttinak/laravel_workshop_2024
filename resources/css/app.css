@@ -3,32 +3,31 @@
 @tailwind utilities;
 
 .btn {
-    @apply w-full p-2 border bg-orange-500 text-white rounded-md;
+    @apply w-full p-2 bg-orange-500 text-white rounded-md;
 }
 
 .btn-primary {
-    @apply bg-orange-500 text-white px-4 py-2 rounded-2xl
+    @apply bg-orange-500 text-white px-4 py-2 rounded-2xl;
 }
 
 .btn-danger {
-    @apply bg-red-500 text-white px-4 py-2 rounded-2xl
+    @apply bg-red-500 text-white px-4 py-2 rounded-2xl;
 }
 
-
 .btn-secondary {
-    @apply bg-gray-500 text-white px-4 py-2 rounded-2xl
+    @apply bg-gray-500 text-white px-4 py-2 rounded-2xl;
 }
 
 .btn-warning {
-    @apply bg-yellow-500 text-white px-4 py-2 rounded-2xl
+    @apply bg-yellow-500 text-white px-4 py-2 rounded-2xl;
 }
 
 .btn-success {
-    @apply bg-green-500 text-white px-4 py-2 rounded-2xl
+    @apply bg-green-500 text-white px-4 py-2 rounded-2xl;
 }
 
 .btn-info {
-    @apply bg-blue-500 text-white px-4 py-2 rounded-2xl
+    @apply bg-blue-500 text-white px-4 py-2 rounded-2xl;
 }
 
 .form-control {
@@ -36,45 +35,81 @@
 }
 
 .content {
-    @apply ml-80 mt-3 p-4 bg-gray-300 rounded-xl mr-5 mb-10
+    @apply ml-5 mt-0 p-4 bg-gray-300 rounded-xl mr-5 mb-10 w-full;
 }
 
 .content-header {
-    @apply mb-3 text-xl border-b border-gray-600 pb-3
+    @apply mb-3 text-xl border-b border-gray-600 pb-3;
 }
 
 .alert {
-    @apply p-3 rounded-md shadow-lg pl-5
+    @apply p-3 rounded-md shadow-lg pl-5;
 }
 
 .alert-success {
-    @apply bg-green-600 text-white
+    @apply bg-green-500 text-white;
 }
 
 .sidebar {
-    @apply fixed h-4/5 mb-10 w-64 bg-gradient-to-br from-orange-500 to-orange-300 text-white rounded-xl ml-5 p-0
+    @apply h-4/5 mb-10 w-72 bg-gradient-to-br from-orange-600 to-orange-400 text-white rounded-xl ml-5 p-0;
 }
 
 .sidebar-header {
-    @apply bg-gradient-to-br from-orange-500 to-orange-300 text-white p-4 text-2xl rounded-t-xl border-b border-gray-300
+    @apply bg-gradient-to-r from-orange-600 to-orange-400 text-white p-4 text-xl rounded-t-xl border-b border-gray-300;
 }
 
 .navbar {
-    @apply p-5 text-orange-300 border-b-2 border-orange-400 m-5
+    @apply p-5 text-orange-400 border-b-2 border-orange-400 m-5;
 }
 
 .sidebar-body {
-    @apply p-4 mt-4
+    @apply p-3 mt-4;
 }
 
 .menu {
-    @apply mb-4
+    @apply mb-4;
 }
 
-.menu-li {
-    @apply p-3 pl-5 rounded-md hover:bg-orange-300 hover:text-gray-800
+.menu li {
+    @apply p-3 pl-5 rounded-md hover:bg-orange-300 hover:text-gray-800;
 }
 
 .active {
-    @apply bg-orange-300 text-gray-800
+    @apply bg-orange-300 text-gray-800;
+}
+
+.btn-edit {
+    @apply bg-blue-500 py-2 px-2 text-white pl-4 rounded-md text-xl;
+}
+
+.btn-delete {
+    @apply bg-red-500 py-2 px-2 text-white pl-4 rounded-md text-xl;
+}
+
+.table {
+    @apply w-full;
+}
+
+.table th {
+    @apply bg-gray-400 p-2 pl-3;
+}
+
+.table th:first-child {
+    @apply rounded-tl-2xl;
+}
+
+.table th:last-child {
+    @apply rounded-tr-2xl;
+}
+
+.table td {
+    @apply pl-3 p-2 bg-gray-100;
+}
+
+.table tr:last-child td:first-child {
+    @apply rounded-bl-2xl;
+}
+
+.table tr:last-child td:last-child {
+    @apply rounded-br-2xl;
 }

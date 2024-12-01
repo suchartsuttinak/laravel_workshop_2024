@@ -1,5 +1,5 @@
 <!-- navbar components -->
-@livewire('navbar')
+{{-- @livewire('navbar') --}}
 
 <!-- sidebar -->
 @livewire('sidebar')

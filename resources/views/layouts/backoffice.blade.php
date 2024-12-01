@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -10,16 +11,22 @@
     @vite('resources/css/app.css')
     @livewireStyles
 </head>
-<body class="bg-gray-800">
-{{-- @include('components.sidebar') --}}
-  <x-sidebar />
- 
 
-  <div class="content">
-    @yield('content')
-  </div>
-  
+<body class="bg-gray-800">
+    {{-- @include('components.sidebar') --}}
+
+
+    @livewire('navbar')
+
+
+    <div class="flex">
+        <x-sidebar />
+        <div class="content">
+            @yield('content')
+        </div>
+    </div>
 
     @livewireScripts
 </body>
+
 </html>

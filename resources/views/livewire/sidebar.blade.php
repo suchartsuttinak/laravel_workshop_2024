@@ -10,13 +10,14 @@
             <ul>
                 <li wire:click="changeMenu('dashboard')" @if ($currentMenu == 'dashboard') class="active" @endif>
                     <i class="fa-solid fa-chart-line me-2"></i>
+
                     Dashboard
                 </li>
                 <li wire:click="changeMenu('expenses/index')" @if ($currentMenu == 'expenses/index') class="active" @endif>
                     <i class="fa-solid fa-building me-2"></i>
                     บันทึกค่าใช้จ่าย
                 </li>
-                <li wire:click="changeMenu('room/index')" @if ($currentMenu == 'room/index') class="active" @endif>
+                <li wire:click="changeMenu('room')" @if ($currentMenu == 'room') class="active" @endif>
                     <i class="fa-solid fa-home me-2"></i>
                     ห้องพัก
                 </li>
@@ -30,7 +31,9 @@
                 </li>
                 <li wire:click="changeMenu('company/index')" @if ($currentMenu == 'company/index') class="active" @endif>
                     <i class="fa-solid fa-building me-2"></i>
+
                     ข้อมูลสถานประกอบการ
+
                 </li>
             </ul>
         </div>
