@@ -2,8 +2,8 @@
 
 namespace App\Http\Controllers;
 
-class RoomController extends Controller {
+class CustomerController extends Controller{
     public function index() {
-        return view('room');
+        return view('customer');
     }
 }

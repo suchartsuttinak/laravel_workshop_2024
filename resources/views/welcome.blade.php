@@ -1,7 +1,5 @@
 @extends('layout')
 
 @section('content')
-
- @livewire('signin')
-
+    @livewire('signin')
 @endsection

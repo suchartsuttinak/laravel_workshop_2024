@@ -10,3 +10,4 @@ class RoomModel extends Model {
 
     public $timestamps = false;
 }
+

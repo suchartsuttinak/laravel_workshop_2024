@@ -35,7 +35,7 @@
 }
 
 .content {
-    @apply ml-5 mt-0 p-4 bg-gray-300 rounded-xl mr-5 mb-10 w-full;
+    @apply ml-5 mt-0 p-4 bg-gray-300 rounded-xl mr-5 mb-10;
 }
 
 .content-header {
@@ -46,8 +46,12 @@
     @apply p-3 rounded-md shadow-lg pl-5;
 }
 
+.alert-danger {
+    @apply bg-red-500 text-white p-3 rounded-md mb-3;
+}
+
 .alert-success {
-    @apply bg-green-500 text-white;
+    @apply bg-green-600 text-white;
 }
 
 .sidebar {
@@ -56,60 +60,75 @@
 
 .sidebar-header {
     @apply bg-gradient-to-r from-orange-600 to-orange-400 text-white p-4 text-xl rounded-t-xl border-b border-gray-300;
-}
+ }
 
-.navbar {
+ .navbar {
     @apply p-5 text-orange-400 border-b-2 border-orange-400 m-5;
-}
+ }
 
-.sidebar-body {
+ .sidebar-body {
     @apply p-3 mt-4;
-}
+ }
 
-.menu {
+ .menu {
     @apply mb-4;
-}
+ }
 
-.menu li {
+ .menu li {
     @apply p-3 pl-5 rounded-md hover:bg-orange-300 hover:text-gray-800;
-}
+ }
 
-.active {
+ .active {
     @apply bg-orange-300 text-gray-800;
-}
+ }
 
-.btn-edit {
+ .btn-edit {
     @apply bg-blue-500 py-2 px-2 text-white pl-4 rounded-md text-xl;
-}
+ }
 
-.btn-delete {
+ .btn-delete {
     @apply bg-red-500 py-2 px-2 text-white pl-4 rounded-md text-xl;
-}
+ }
 
-.table {
+ .table {
     @apply w-full;
-}
+ }
 
-.table th {
+ .table th {
     @apply bg-gray-400 p-2 pl-3;
-}
+ }
 
-.table th:first-child {
+ .table th:first-child {
     @apply rounded-tl-2xl;
-}
+ }
 
-.table th:last-child {
+ .table th:last-child {
     @apply rounded-tr-2xl;
-}
+ }
 
-.table td {
+ .table td {
     @apply pl-3 p-2 bg-gray-100;
-}
+ }
 
-.table tr:last-child td:first-child {
+ .table tr:last-child td:first-child {
     @apply rounded-bl-2xl;
+ }
+
+ .table tr:last-child td:last-child {
+    @apply rounded-br-2xl;
+ }
+
+tbody tr {
+   @apply border-b border-gray-300;
 }
 
-.table tr:last-child td:last-child {
-    @apply rounded-br-2xl;
+tbody tr:last-child {
+    @apply border-b-0;
 }
+
+
+
+
+
+
+

@@ -1,5 +1,5 @@
 @extends('layouts.backoffice')
 
 @section('content')
-    @livewire('company')
+    @livewire('user')
 @endsection

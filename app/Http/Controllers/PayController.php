@@ -2,8 +2,9 @@
 
 namespace App\Http\Controllers;
 
-class RoomController extends Controller {
+class PayController extends Controller
+{
     public function index() {
-        return view('room');
+        return view('pay');
     }
 }
