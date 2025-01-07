@@ -31,7 +31,21 @@
                         <td>{{ $billing->getCustomer()->phone }}</td>
                         <td>{{ date('d/m/Y', strtotime($billing->created_at)) }}</td>
                         <td class="text-right">{{ number_format($billing->sumAmount()) }}</td>
-                        <td class="text-center">{{ $billing->getStatusName() }}</td>
+                        <td class="text-center">
+                            @if ($billing->status == 'paid')
+                                <span class="text-green-500">
+                                    <i class="fa fa-check mr-1"></i>
+                                    {{ $billing->getStatusName() }}
+                                </span>
+                            @else
+                                <span class="text-red-500">
+                                    <i class="fa fa-times mr-1"></i>
+                                    {{ $billing->getStatusName() }}
+                            @endif
+                        </td>
+
+
+
                         <td>{{ $billing->remark }}</td>
                         <td>
                             <button class="btn-edit" wire:click="openModalGetMoney({{ $billing->id }})">
@@ -195,17 +209,45 @@
     </x-modal-confirm>
 
     <x-modal title="รับเงิน" wire:model="showModalGetMoney">
-        <div>ห้อง : {{ $roomNameForGetMoney }}</div>
+        {{-- พิมพ์ใบเสร็จรับเงิน --}}
+        <div class="flex gap-2 justify-between">
+            <div class="w-1/2">
+                <span class="font-bold">ห้อง</span>
+                <span class="text-blue-500 px-3 font-bold text-xl">
+                    {{ $roomNameForGetMoney }}
+                </span>
+            </div>
+            <div class="w-1/2 text-right">
+                <a class="ms-3 bg-green-500 text-white px-5 py-3 rounded-lg shadow-md hover:bg-green-600"
+                    href="print-invoice/{{ $id }}" target="_blank">
+                    <i class="fa fa-print mr-2"></i>
+                    พิมพ์ใบเสร็จรับเงิน
+                </a>
+            </div>
+        </div>
+        {{-- พิมพ์ใบเสร็จรับเงิน --}}
+
         <div class="mt-3">ผู้เช่า : {{ $customerNameForGetMoney }}</div>
         <div class="mt-3">วันที่ชำระ</div>
         <input type="date" class="form-control" wire:model="payedDateForGetMoney" />
-
         <div class="mt-3">ยอดรวมค่าใช้จ่าย :
             <span class="font-bold">{{ number_format($sumAmountForGetMoney) }}</span>
             บาท
         </div>
-        <div class="mt-3">ยอดรับเงิน</div>
-        <input type="number" class="form-control" wire:model="moneyAdded" />
+
+        {{-- ค่าปรับ และยอดรับเงิน --}}
+        <div class="flex gap-2 mt-3">
+            <div class="w-1/2">
+                <div>ค่าปรับ</div>
+                <input type="number" class="form-control" wire:model="moneyAdded"
+                    wire:blur="handleChangeAmountForGetMoney()" />
+            </div>
+            <div class="w-1/2">
+                <div>ยอดรับเงิน</div>
+                <input type="number" class="form-control" wire:model="amountForGetMoney" />
+            </div>
+        </div>
+        {{-- สิ้นสุด ค่าปรับ และยอดรับเงิน --}}
 
         <div class="mt-3">หมายเหตุ</div>
         <input type="text" class="form-control" wire:model="remarkForGetMoney" />
