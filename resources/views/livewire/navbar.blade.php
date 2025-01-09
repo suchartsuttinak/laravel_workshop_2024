@@ -1,4 +1,4 @@
-<div class="navbar">
+<div class="navbar border-y-gray-400 p-4 rounded-2xl">
     <div class="flex items-center justify-between">
         <div>
             <i class="fa-solid fa-user me-2"></i>
@@ -6,12 +6,12 @@
         </div>
         <div>
             <button wire:click="editProfile"
-                class="border border-blue-400 text-blue-400 hover:bg-blue-400 hover:text-white px-6 py-3 rounded-2xl mr-2">
+                class="border border-blue-800 text-blue-800 hover:bg-blue-400 hover:text-white px-6 py-3 rounded-2xl mr-2">
                 <i class="fa-solid fa-user me-2"></i>
                 แก้ไขข้อมูล
             </button>
             <button wire:click="showModal = true"
-                class="border border-orange-400 text-orange-400 hover:bg-orange-400 hover:text-white px-6 py-3 rounded-2xl">
+                class="border border-orange-400 text-orange-800 hover:bg-orange-400 hover:text-white px-6 py-3 rounded-2xl">
                 <i class="fa-solid fa-sign-out-alt ms-2"></i>
                 ออกจากระบบ
             </button>

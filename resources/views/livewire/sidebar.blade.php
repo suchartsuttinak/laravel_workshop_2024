@@ -1,6 +1,9 @@
 <div class="sidebar">
     <div class="sidebar-header">
-        <div class="text-center">jApartment 1.0</div>
+        <div class="text-center">
+            <i class="fa-solid fa-cat me-2"></i>
+            แมวเหมี๊ยว อพาร์ทเมนต์
+        </div>
     </div>
     <div class="sidebar-body">
         <div class="menu">
