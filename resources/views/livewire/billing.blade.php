@@ -217,7 +217,7 @@
                     {{ $roomNameForGetMoney }}
                 </span>
             </div>
-            <div class="w-1/2 text-right">
+            <div class="w-1/2 text-right mt-1">
                 <a class="ms-3 bg-green-500 text-white px-5 py-3 rounded-lg shadow-md hover:bg-green-600"
                     href="print-invoice/{{ $id }}" target="_blank">
                     <i class="fa fa-print mr-2"></i>
@@ -239,6 +239,8 @@
         <div class="flex gap-2 mt-3">
             <div class="w-1/2">
                 <div>ค่าปรับ</div>
+                {{-- เมื่อเปลี่ยนค่าปรับ หรือตัวแปร moneyAdded ให้เรียกใช้ ฟังก์ชัน handleChangeAmountForGetMoney() --}}
+                {{-- โดยในฟังก์ชันนี้จะเปลี่ยนค่า amountForGetMoney คือเอา $billing->sumAmount() + moneyAdded --}}
                 <input type="number" class="form-control" wire:model="moneyAdded"
                     wire:blur="handleChangeAmountForGetMoney()" />
             </div>

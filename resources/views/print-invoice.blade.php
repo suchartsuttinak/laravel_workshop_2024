@@ -63,7 +63,12 @@
 </table>
 
 {{-- ใส่หมายเหตุ --}}
-@if (isset($billing->remark))
+{{-- @if (isset($billing->remark))
+    <div>&nbsp;</div>
+    <div>***หมายเหตุ***</div>
+    <div>{{ $billing->remark }}</div>
+@endif --}}
+@if ($billing->remark != '')
     <div>&nbsp;</div>
     <div>***หมายเหตุ***</div>
     <div>{{ $billing->remark }}</div>

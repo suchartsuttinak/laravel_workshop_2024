@@ -246,9 +246,9 @@ class Billing extends Component
         $this->customerNameForGetMoney = $billing->getCustomer()->name;
         $this->sumAmountForGetMoney = $billing->sumAmount();
         $this->payedDateForGetMoney = date('Y-m-d');
-        $this->moneyAdded = 0;
-        $this->remarkForGetMoney = $billing->remark;
-        $this->amountForGetMoney = $billing->sumAmount();
+        $this->moneyAdded = $billing->money_added ?? 0;
+        $this->remarkForGetMoney = $billing->remark ?? '';
+        $this->amountForGetMoney = $this->sumAmountForGetMoney + $this->moneyAdded;
         
     }
     public function closeModalGetMoney(){
@@ -266,7 +266,8 @@ class Billing extends Component
     //จ่ายค่าปรับ และยอดรับเงิน
     public function handleChangeAmountForGetMoney(){
         // $this->moneyAdded = $this->moneyAdded == '' ? 0 : $this->moneyAdded;
-        $this->amountForGetMoney = $this->amountForGetMoney + $this->moneyAdded;
+        $billing = BillingModel::find($this->id);
+        $this->amountForGetMoney = $billing->sumAmount() + $this->moneyAdded;
     }
     
 
