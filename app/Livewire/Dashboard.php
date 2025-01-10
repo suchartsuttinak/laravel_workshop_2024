@@ -8,6 +8,7 @@ use App\Models\RoomModel;
 use App\Models\CustomerModel;
 use App\Models\PayLogModel;
 
+
 class Dashboard extends Component{
     public $income = 0;
     public $roomFee = 0;
@@ -16,6 +17,7 @@ class Dashboard extends Component{
 
     //รายได้แต่ละเดือน
     public $incomeInMonth = [];
+   
 
     public function mount(){
         //รายได้
@@ -53,11 +55,8 @@ class Dashboard extends Component{
             }
             $this->incomeInMonth[$i] = $sum;           
         }
-        
-        // dd($this->incomeInMonth);
-    }
 
-   
+    }
 
     public function render()
     {

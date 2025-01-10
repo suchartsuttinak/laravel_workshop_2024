@@ -52,8 +52,7 @@
                 </div>
                 <div class="text-3xl">{{ number_format($income - $pay) }}</div>
             </div>
-
-
         </div>
+
     </div>
 </div>
