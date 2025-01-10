@@ -10,8 +10,8 @@
             <thead>
                 <tr>
                     <th>ชื่อ</th>
-                    <th>เบอร์โทร</th>
                     <th>ห้องพัก</th>
+                    <th>เบอร์โทร</th>
                     <th>วันที่เข้าพัก</th>
                     <th>ประเภทการพัก</th>
                     <th>หมายเหตุ</th>
@@ -22,8 +22,8 @@
                 @foreach ($customers as $customer)
                     <tr>
                         <td>{{ $customer->name }}</td>
-                        <td>{{ $customer->phone }}</td>
                         <td>{{ $customer->room->name }}</td>
+                        <td>{{ $customer->phone }}</td>
                         <td>{{ date('d/m/Y', strtotime($customer->created_at)) }}</td>
                         <td>{{ $customer->stay_type == 'd' ? 'รายวัน' : 'รายเดือน' }}</td>
                         <td>{{ $customer->remark }}</td>

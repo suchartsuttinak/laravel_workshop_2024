@@ -1,5 +1,5 @@
 <div>
-    <div class="content-header">Dashboard</div>
+    <div class="content-header text-blue-800">รายงานผลประกอบการ</div>
     <div class="content-body">
         <div class="flex gap-4 text-right">
             <div class="box-income">

@@ -1,8 +1,8 @@
-<div class="mx-auto flex flex-col items-center justify-center h-screen bg-gradient-to-tr from-orange-500 to-white">
+<div class="mx-auto flex flex-col items-center justify-center h-screen bg-gradient-to-tr from-blue-200 to-white">
     <div class="w-full max-w-md border border-orange-400 rounded-md p-4 bg-white">
-        <div class="text-2xl font-bold">
+        <div class="text-2xl font-bold text-orange-500">
             <i class="fa fa-user me-2"></i>
-            Sign In to BackOffice
+            เข้าสู่ระบบหอพัก
         </div>
         <form class="mt-5" wire:submit="signin">
             <div>Username</div>
@@ -23,7 +23,7 @@
                 </div>
             @endif
 
-            <button type="submit" class="btn btn-primary mt-5">Sign In</button>
+            <button type="submit" class="btn btn-primary mt-5">เข้าระบบ</button>
         </form>
 
         @if (isset($error))

@@ -2,14 +2,14 @@
     <div class="sidebar-header">
         <div class="text-center">
             <i class="fa-solid fa-cat me-2"></i>
-            แมวเหมี๊ยว อพาร์ทเมนต์
+            น้องแมวอพาร์ทเมนต์
         </div>
     </div>
     <div class="sidebar-body">
         <div class="menu">
             <ul>
                 <li wire:click="changeMenu('dashboard')" @if ($currentMenu == 'dashboard') class="active" @endif>
-                    <i class="fa-solid fa-chart-line me-2"></i>Dashboard
+                    <i class="fa-solid fa-chart-line me-2"></i>ผลประกอบการ
                 </li>
                 <li wire:click="changeMenu('billing')" @if ($currentMenu == 'billing') class="active" @endif>
                     <i class="fa-solid fa-building me-2"></i>ใบเสร็จรับเงิน
