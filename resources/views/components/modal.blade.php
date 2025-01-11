@@ -22,7 +22,7 @@
 
     <div class="mb-6 bg-white rounded-lg overflow-hidden shadow-xl transform transition-all sm:w-full {{ $maxWidth }} sm:mx-auto"
         x-show="show" x-trap.inert.noscroll="show">
-        <div class="px-3 py-3 bg-orange-500 text-white">
+        <div class="px-3 py-3 bg-blue-500 text-white">
             <div class="text-lg font-medium">{{ $title }}</div>
         </div>
 
