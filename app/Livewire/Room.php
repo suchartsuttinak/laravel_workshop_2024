@@ -20,7 +20,18 @@ class Room extends Component {
     public $price_per_month;
     public $nameForDelete;
 
+
+    //pagination
+    public $itemsPerPage = 8;
+    public $currentPage = 1;
+    public $totalPages;
+
     public function mount() {
+        $this->fetchData();
+    }
+
+    public function setPage($page) {
+        $this->currentPage = $page;
         $this->fetchData();
     }
 
@@ -40,6 +51,17 @@ class Room extends Component {
         $this->name = $room->name;
         $this->price_day = $room->price_per_day;
         $this->price_month = $room->price_per_month;
+    }
+
+    //pagination
+    public function prevPage() {
+        $this->currentPage--;
+        $this->fetchData();
+    }
+
+    public function nextPage() {
+        $this->currentPage++;
+        $this->fetchData();
     }
 
     public function openModalDelete($id) {
@@ -71,10 +93,26 @@ class Room extends Component {
     }
 
     public function fetchData() {
+        $this->rooms = [];
+        $start = ($this->currentPage - 1) * $this->itemsPerPage;
+        $end = $this->itemsPerPage;
+
         $this->rooms = RoomModel::where('status', 'use')
-        ->orderBy('id', 'asc')
-        ->get();
+            ->orderBy('id', 'asc')
+            ->skip($start)
+            ->take($end)
+            ->get();
+
+            $totalRooms = RoomModel::where('status', 'use')->count();
+            $this->totalPages = ceil($totalRooms / $this->itemsPerPage);
     }
+
+            //กรณีไม่ใช้ pagination
+            //     $this->rooms = RoomModel::where('status', 'use')
+            //     ->orderBy('id', 'asc')
+            //     ->get();
+            // }
+
 
     public function createRoom() {
         $this->validate([

@@ -17,12 +17,13 @@ class Navbar extends Component {
     public $errorUsername;
     public $errorPassword;
     public $saveSuccess = false;
+    public $userLevel = '';
 
     public function editProfile() {
         $this->showModalEdit = true;
 
         $user = User::find(session()->get('user_id'));
-        $this->username = $user->name;
+        $this->username = $user->name;    
         $this->saveSuccess = false;
     }
 
@@ -50,6 +51,8 @@ class Navbar extends Component {
 
     public function mount() {
         $this->user_name = session()->get('user_name');
+        $this->userLevel = session()->get('user_level');
+        // dd($this->userLevel);
     }
 
     public function logout() {
